@@ -1,11 +1,11 @@
 package services;
 
-import api.model.Errores;
+import api.model.Breeds;
 import com.crowdar.api.rest.MethodsService;
 import com.crowdar.api.rest.Response;
 
-public class ErroresService extends MethodsService {
+public class BreedsService extends MethodsService {
     public static Response get (String request){
-        return get(request, Errores.class);
+        return get(request, Breeds.class);
     }
 }

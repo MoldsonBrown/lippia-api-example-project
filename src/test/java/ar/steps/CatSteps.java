@@ -54,4 +54,14 @@ public class CatSteps extends PageSteps {
                 .getMethod(operacion.toLowerCase(), String.class)
                 .invoke("", request);
     }
+
+    @When("realizo una peticion '(.*)' a '(.*)' al endpoint de Breeds - '(.*)'")
+    public void realizoUnaPeticionDeBreedsRequest(
+            String operacion, String entity, String request) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+
+        EntityConfiguration.valueOf(entity)
+                .getEntityService()
+                .getMethod(operacion.toLowerCase(), String.class)
+                .invoke("", request);
+    }
 }

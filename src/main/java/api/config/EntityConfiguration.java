@@ -35,6 +35,11 @@ public enum EntityConfiguration {
         @Override
         public Class<?> getEntityService() { return ErroresService.class; }
 
+    },
+
+    BREEDS {
+        @Override
+        public Class<?> getEntityService() { return BreedsService.class; }
     };
 
     public abstract Class<?> getEntityService();
