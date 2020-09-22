@@ -34,4 +34,13 @@ Feature: Cat API
     @CatErrors
     Examples:
       | request                   | statusCode | operation | entity     |
-      | request/cat_errors        | 400        | GET      | ERRORES    |
+      | request/cat_errors        | 400        | GET      | ERRORES     |
+
+  @CatApi
+  Scenario Outline: Request erróneo 2
+    When realizo una peticion '<operation>' a '<entity>' al endpoint de Errores - '<request>'
+    Then obtengo el status code '<statusCode>'
+    @CatErrors2
+    Examples:
+      | request                   | statusCode | operation | entity     |
+      | request/cat_errors2       | 404        | GET       | ERRORES     |
