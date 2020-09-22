@@ -33,4 +33,25 @@ public class CatSteps extends PageSteps {
         int size = categories.length;
         Assert.assertEquals(size, 7);
     }
+
+    @When("realizo una peticion '(.*)' a '(.*)' al endpoint de analisis - '(.*)'")
+    public void realizoUnaPeticionAnalisisRequest(
+            String operacion, String entity, String request) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+
+        EntityConfiguration.valueOf(entity)
+                .getEntityService()
+                .getMethod(operacion.toLowerCase(), String.class)
+                .invoke("", request);
+
+    }
+
+    @When("realizo una peticion '(.*)' a '(.*)' al endpoint de Errores - '(.*)'")
+    public void realizoUnaPeticionErroresRequest(
+            String operacion, String entity, String request) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+
+            EntityConfiguration.valueOf(entity)
+                .getEntityService()
+                .getMethod(operacion.toLowerCase(), String.class)
+                .invoke("", request);
+    }
 }

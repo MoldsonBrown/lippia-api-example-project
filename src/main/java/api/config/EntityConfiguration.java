@@ -1,8 +1,6 @@
 package api.config;
 
-import services.CategoriesService;
-import services.ResponseHeadersService;
-import services.UserService;
+import services.*;
 
 public enum EntityConfiguration {
 
@@ -24,6 +22,18 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return CategoriesService.class;
         }
+
+    },
+    ANALYSIS {
+        @Override
+        public Class<?> getEntityService() {
+            return AnalysisService.class;
+        }
+    },
+
+    ERRORES {
+        @Override
+        public Class<?> getEntityService() { return ErroresService.class; }
 
     };
 
